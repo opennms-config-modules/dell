@@ -12,7 +12,7 @@ git clone https://github.com/opennms-config-modules/dell.git
 ----
 
 ### Events
-.Install 'netsnmp.events.xml'
+.Install Dell events
 [source, bash]
 ----
 cd $OPENNMS_HOME/etc/events
@@ -22,7 +22,13 @@ ln -s ../modules-available/dell/events/*.xml .
 .Include in eventconf.xml
 [source, xml]
 ----
-<event-file>events/dell.events.xml</event-file>
+<event-file>events/dell.arraymanager.events.xml</event-file>
+<event-file>events/dell.asf.events.xml</event-file>
+<event-file>events/dell.drac.events.xml</event-file>
+<event-file>events/dell.drac2.events.xml</event-file>
+<event-file>events/dell.itassist.events.xml</event-file>
+<event-file>events/dell.openmanage.events.xml</event-file>
+<event-file>events/dell.storage.management.events.xml</event-file>
 ----
 
 ### Datacollection
