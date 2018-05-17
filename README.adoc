@@ -1,28 +1,29 @@
-# Dell
+= Dell
 
 OpenNMS configuration for Dell DRAC and OpenManage
 
-## Installation
+== Installation
 
 .Download and install from GitHub
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/modules-available
+mkdir ${HOME}/opennms-config-workspace
+cd ${HOME}/opennms-config-workspace
 git clone https://github.com/opennms-config-modules/dell.git
 ----
 
-### Events
-.Install Dell events
+=== Events
+
+.Install events
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/events
-ln -s ../modules-available/dell/events/*.xml .
+cp ${HOME}/opennms-config-workspace/dell/events/*.xml ${OPENNMS_HOME}/etc/events
 ----
 
 .Include in eventconf.xml
 [source, xml]
 ----
-<event-file>events/dell.arraymanager.events.xml</event-file>
+<event-file>events/dell.array-manager.events.xml</event-file>
 <event-file>events/dell.asf.events.xml</event-file>
 <event-file>events/dell.drac.events.xml</event-file>
 <event-file>events/dell.drac2.events.xml</event-file>
@@ -31,13 +32,12 @@ ln -s ../modules-available/dell/events/*.xml .
 <event-file>events/dell.storage.management.events.xml</event-file>
 ----
 
-### Datacollection
+=== Data Collection
 
 .Install datacollection configuration
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/datacollection
-ln -s ../modules-available/dell/datacollection/*.xml .
+cp ${HOME}/opennms-config-workspace/dell/datacollection/*.xml ${OPENNMS_HOME}/etc/datacollection
 ----
 
 .Include in datacollection-config.xml
@@ -47,17 +47,10 @@ ln -s ../modules-available/dell/datacollection/*.xml .
 <include-collection dataCollectionGroup="Dell-OpenManage"/>
 ----
 
-### Graph report definitions
+=== Graph Report Definitions
 
 .Install graph report definitions
 [source, bash]
 ----
-cd $OPENNMS_HOME/etc/snmp-graph.properties.d
-ln -s ../modules-available/dell/graphs/*.properties .
+cp ${HOME}/opennms-config-workspace/dell/graphs/*.properties ${OPENNMS_HOME}/etc/snmp-graph.properties.d
 ----
-
-# License & Authors
-
-- Author:: Ronny Trommer (<ronny@opennms.org>)
-
-Licensed under the GNU Affero General Public License 3+. You may obtain a copy of the License at http://www.gnu.org/licenses/agpl-3.0.html.
