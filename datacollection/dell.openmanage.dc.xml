@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <datacollection-group xmlns="https://xmlns.opennms.org/xsd/config/datacollection" name="Dell-OpenManage">
     <resourceType name="coolingDeviceIndex" label="Dell Cooling Device" resourceLabel="${coolingDeviceLocationName}">
-        <persistenceSelectorStrategy class="org.opennms.netmgt.collectd.PersistAllSelectorStrategy"/>
-        <storageStrategy class="org.opennms.netmgt.dao.support.IndexStorageStrategy"/>
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
     </resourceType>
 
     <resourceType name="temperatureProbeIndex" label="Dell Temperature Probe"
                   resourceLabel="${temperatureProbeLocationName}">
-        <persistenceSelectorStrategy class="org.opennms.netmgt.collectd.PersistAllSelectorStrategy"/>
-        <storageStrategy class="org.opennms.netmgt.dao.support.IndexStorageStrategy"/>
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
     </resourceType>
 
     <resourceType name="powerUsageIndex" label="Dell Power Usage" resourceLabel="${powerUsageEntityName}">
-        <persistenceSelectorStrategy class="org.opennms.netmgt.collectd.PersistAllSelectorStrategy"/>
-        <storageStrategy class="org.opennms.netmgt.dao.support.IndexStorageStrategy"/>
+        <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+        <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
     </resourceType>
 
     <group name="openmanage-coolingdevices" ifType="all">
